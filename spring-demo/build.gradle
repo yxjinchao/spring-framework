@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.2.23.BUILD-SNAPSHOT'
+
+repositories {
+    maven{ url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+    maven{ url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+}
+
+dependencies {
+    compile(project(":spring-core"))
+    compile(project(":spring-beans"))
+    compile(project(":spring-context"))
+    compile(project(":spring-aop"))
+    testCompile("junit:junit:4.13.2")
+}
+
+test {
+    useJUnitPlatform()
+}
